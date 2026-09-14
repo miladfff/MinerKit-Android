@@ -41,6 +41,7 @@ enum class Tab(val fa: String) { HOME("خانه"), MINERS("ماینرها"), TOO
     } }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable private fun Header(technician: Boolean, toggle: () -> Unit) {
     TopAppBar(title = { Column { Text("MinerKit", fontWeight = FontWeight.ExtraBold); Text(if (technician) "حالت تکنسین" else "حالت ساده", fontSize = 11.sp, color = Emerald) } },
         actions = { FilterChip(selected = technician, onClick = toggle, label = { Text("TECH") }); Spacer(Modifier.width(12.dp)) },
